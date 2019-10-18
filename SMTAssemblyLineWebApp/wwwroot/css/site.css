@@ -1,0 +1,37 @@
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification 
+for details on configuring this project to bundle and minify static web assets. */
+
+body { background-color: #eef5f9; }
+.page-breadcrumb { padding: 0px 20px 0 20px; }
+span.required { color: red; }
+.autocomplete-suggestions { overflow: auto; border: 1px solid #CBD3DD; background: #FFF; }
+.autocomplete-suggestion { overflow: hidden; padding: 5px 15px; white-space: nowrap; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { color: #029cca; font-weight: normal; }
+.hidden { display: none !important; }
+
+.side-bar { display: block; text-align: center; color: #6c7293; font-weight: 500; font-size: 1.1rem; padding: .9rem 0; margin: .4rem 0; }
+
+    .side-bar:hover { background-color: #f8f9fd; }
+
+.datepicker .day,
+.datepicker .dow { padding: 0px 0px !important; }
+
+.form-group.position-relative input { padding-right: 32px; }
+
+.form-clear { align-items: center; border-radius: 50%; bottom: 8px; color: rgba(0, 0, 0, .54); cursor: pointer; display: flex; height: 24px; justify-content: center; position: absolute; right: 0; width: 24px; z-index: 10; }
+
+.form-text + .form-clear { bottom: calc(1rem + 18px); }
+
+.form-clear .fa-remove { font-size: 16px; font-weight: 500; }
+
+.blockUI.blockOverlay { background-color: #f8f9fa !important; z-index: 1051 !important; }
+
+
+.data-table > div > div > label > select, input { padding: 0.375rem 0.75rem; font-size: 0.875rem; line-height: 1.5; color: #4F5467; background-color: #fff; background-clip: padding-box; border: 1px solid #e9ecef; border-radius: 2px; transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
+
+
+
+.lds-ripple.custom-loader { border: 1px solid #f2f2f2; width: 130px; height: 60px; top: calc(50% - 30px); left: calc(50% - 65px); }
+
+.block-ui-content { display: table; border: 1px solid #f2f2f2; margin: 0px auto; background-color: #fff; width: 130px; }

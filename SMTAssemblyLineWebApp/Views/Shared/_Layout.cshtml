@@ -1,0 +1,216 @@
+﻿@{
+    //var loggedInUser = User.GetUser();
+}
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Arcstone Pte. Ltd.">
+    <title> @ViewData["Title"] - ARCSTONE</title>
+    <base href='@Url.Content("~")'>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="@Url.Content("~/favicon.ico")">
+    <!-- Global CSS -->
+    <link href="@Url.Content("~/css/style.css")" rel="stylesheet">
+    <link href="@Url.Content("~/lib/select2/dist/css/select2.min.css")" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link href="@Url.Content("~/css/site.css")" rel="stylesheet">
+    @RenderSection("Style", required: false)
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple custom-loader" style="display:table">
+            <div style="display:table-cell">
+                <img src="~/images/loading.gif" />
+            </div>
+            <div style="display:table-cell">Loading...</div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+
+    <div id="main-wrapper">
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <div class="navbar-header">
+                    <!-- This is for the sidebar toggle which is visible on mobile only -->
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <a class="navbar-brand" href="@Url.Content("~/Home/Index")">
+                        <!-- Logo icon -->
+                        <b class="logo-icon">
+                            <img src=" @Url.Content("~/images/client_logo.png")" alt="home" style="max-height:40px;max-width: 100%;" class="dark-logo" />
+                        </b>
+
+                    </a>
+
+                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent">
+
+                    <!-- Left side toggle and nav items -->
+                    <ul class="navbar-nav float-left mr-auto"></ul>
+
+                    <!-- Right side toggle and nav items -->
+                    <ul class="navbar-nav float-right">
+                        <!-- ============================================================== -->
+                        <!-- create new -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="@Url.Content("~/Home/Index")" id="navbarDropdown2" role="button">
+                                <img src=" @Url.Content("~/images/home.png")" alt="home" style="height:31px;" />
+                            </a>
+                        </li>
+
+                        <!-- ============================================================== -->
+                        <!-- User profile -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="@Url.Content("~/images/avatar.jpg")" alt="user" class="rounded-circle" width="31"></a>
+                            <div class="dropdown-menu dropdown-menu-right user-dd ">
+                                <span class="with-arrow"><span class="bg-primary"></span></span>
+                                <div class="d-flex no-block align-items-center p-15 bg-primary text-white m-b-10">
+                                    <div class=""><img src="@Url.Content("~/images/avatar.jpg")" alt="user" class="img-circle" width="60"></div>
+                                    <div class="m-l-10">
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="@Url.Content("~/Account/Logout")"><i class="fa fa-sign-out-alt"></i> Logout</a>
+                            </div>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- User profile-->
+                        <!-- ============================================================== -->
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+
+            @RenderSection("BreadCrumb", required: false)
+
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <div id="dvAlertNotitications" style="position: absolute;width: 30em;right: 1em;"></div>
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                @RenderBody()
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer text-center">
+                &copy;&nbsp;@DateTime.Now.Year&nbsp;Powered by Arcstone
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="@Url.Content("~/lib/jquery/dist/jquery.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/lib/popper.js/dist/umd/popper.min.js")" type="text/javascript"></script>
+
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="@Url.Content("~/lib/bootstrap/dist/js/bootstrap.min.js")" type="text/javascript"></script>
+
+    <script src="@Url.Content("~/lib/jquery-validation/dist/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+    <script src="@Url.Content("~/lib/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/lib/block-ui/jquery.blockUI.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/lib/select2/dist/js/select2.min.js")" type="text/javascript"></script>
+
+    <!--end:: Global Mandatory Vendors -->
+    <!-- apps -->
+    <script src="@Url.Content("~/js/app.min.js")"></script>
+    <script src="@Url.Content("~/js/app.init.js")"></script>
+
+    <!--Wave Effects -->
+    <script src="@Url.Content("~/js/waves.js")"></script>
+    <!--Menu sidebar -->
+    @*<script src="@Url.Content("~/js/sidebarmenu.js")"></script>*@
+    <!--Custom JavaScript -->
+    <script src="@Url.Content("~/js/custom.js")"></script>
+
+    <script src="@Url.Content("~/js/Chart.min.js")" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        var loadingContent = '<div class="block-ui-content" > <div style = "display:table-cell"> <img src="@Url.Content("~/images/loading.gif")" /> </div ><div style="display:table-cell">Loading...</div> </div >'
+
+        function blockUi() {
+            $.blockUI();
+            $.blockUI({
+                message: loadingContent,
+                css: {
+                    'background-color': 'transparent',
+                    'border':'0px',
+                    'z-index': '1053',
+                }
+            });
+        }
+
+
+
+
+    </script>
+
+    <!--begin::Page Specific Scripts -->
+    @RenderSection("Scripts", required: false)
+    <!--end::Page Specific Scripts -->
+
+</body>
+</html>
+
+
+
+
